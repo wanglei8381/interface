@@ -1,0 +1,25 @@
+{
+  "server": {
+    "name": "server name",
+    "cluster": 1,
+    "basedir": "/opt/MASProjects/EMOA_APP_SERVICE_NEW/interface",
+    "services": [
+      {
+        "name": "app",
+        "appBase": "",
+        "port": "18181",
+        "protocal": "HTTP",
+        "certificate": {
+          "key": "",
+          "cert": ""
+        },
+        "secure": false,
+        "auth": {
+          "type": "ssl",
+          "ca": ""
+        },
+        "timeout": "60"
+      }
+    ]
+  }
+}
