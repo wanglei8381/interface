@@ -2,7 +2,7 @@
   "server": {
     "name": "server name",
     "cluster": 1,
-    "basedir": "/opt/MASProjects/EMOA_APP_SERVICE_NEW/interface",
+    "basedir": "/opt/MASProjects/",
     "log": {
       "level": 3,
       "file": "/var/log/demo.log"

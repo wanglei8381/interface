@@ -1,3 +1,3 @@
-var interface = require('../..');
+var app = require('../..');
 
-interface.main(__dirname);
+app.Runner(__dirname);
