@@ -1,8 +1,8 @@
 {
   "server": {
     "name": "server name",
-    "cluster": 1,
-    "basedir": "/opt/MASProjects/",
+    "cluster": 2,
+    "basedir": "/usr/projects",
     "log": {
       "level": 3,
       "file": "/var/log/demo.log"
@@ -10,7 +10,6 @@
     "services": [
       {
         "name": "app",
-        "appBase": "",
         "port": "18181",
         "protocal": "HTTP",
         "certificate": {

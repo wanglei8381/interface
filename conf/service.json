@@ -2,28 +2,25 @@
   "server": {
     "name": "server name",
     "cluster": 1,
-    "basedir": "/opt/MASProjects/EMOA_APP_SERVICE_NEW/interface",
+    "basedir": "/usr/projects",
     "log": {
       "level": 3,
       "file": "/var/log/demo.log"
     },
-    "services": [
-      {
-        "name": "app",
-        "appBase": "",
-        "port": "18181",
-        "protocal": "HTTP",
-        "certificate": {
-          "key": "",
-          "cert": ""
-        },
-        "secure": false,
-        "auth": {
-          "type": "ssl",
-          "ca": ""
-        },
-        "timeout": "60"
-      }
-    ]
+    "service": {
+      "name": "app",
+      "port": "3000",
+      "protocal": "HTTP",
+      "certificate": {
+        "key": "",
+        "cert": ""
+      },
+      "secure": false,
+      "auth": {
+        "type": "ssl",
+        "ca": ""
+      },
+      "timeout": "60"
+    }
   }
 }
