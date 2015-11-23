@@ -5,6 +5,12 @@
       "path" : "app",
       "method" : "POST",
       "public" : true
+    },
+    {
+      "name" : "sys/user",
+      "path" : "sys/user",
+      "method" : "GET,POST",
+      "public" : false
     }
   ]
 }
