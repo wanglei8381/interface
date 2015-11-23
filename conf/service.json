@@ -2,10 +2,10 @@
   "server": {
     "name": "server name",
     "cluster": 1,
-    "basedir": "/usr/projects",
+    "basedir": null,
     "log": {
-      "level": 3,
-      "file": "/var/log/demo.log"
+      "level": 2,
+      "file": null
     },
     "service": {
       "name": "app",

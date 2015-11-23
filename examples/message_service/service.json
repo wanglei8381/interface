@@ -1,0 +1,17 @@
+{
+  "server": {
+    "name": "server name",
+    "cluster": 1,
+    "log": {
+      "level": 3
+    },
+    "services": [
+      {
+        "name": "msg",
+        "port": "3000",
+        "protocal": "HTTP",
+        "timeout": "60"
+      }
+    ]
+  }
+}

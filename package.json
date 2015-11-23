@@ -1,8 +1,15 @@
 {
   "name": "interface",
   "version": "0.0.1",
-  "licenses": "MIT",
+  "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "htmlparser2": "3.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wanglei8381/interface.git"
   }
 }
