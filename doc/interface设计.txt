@@ -1,0 +1,99 @@
+
+
+#########INTERFACE############
+
+一般项目目录结构：
+
+项目名：
+			CA证书
+			工程名1
+				接口...
+				interface.json
+			工程名2
+			app.js
+			service.json
+
+说明：
+通过app.js启动项目，
+查找同目录下的service.json
+然后，解析service.json
+
+service.json配置说明：
+{
+  "server": {
+    "name": "message_service",
+		"basedoc"："",
+    "cluster": 1,
+    "loglevel": 2,
+    "services": [
+      {
+        "name": "msg",
+				"path": "/msg"
+        "port": "3000",
+        "protocal": "HTTP",
+        "timeout": "60"
+      }
+    ]
+  }
+}
+
+name:服务名称(仅作展示)
+	省略：默认app_service
+	不省略：1-50个字符
+basedoc：接口文档的基本目录，从该目录下查找工程
+	省略：app.js同一个父目录
+	不省略：是一个绝对路径
+cluster：cpu个数
+	省略：1个
+  不省略: 大于1的整数，最大不能超过os.cpus()的个数
+loglevel：系统内部日志等级（1-7）'all', 'debug', 'info', 'warn', 'error', 'fatal', 'off'
+  省略：2
+  不省略: 整数，小于1的==1，大于7的等于7
+services：服务列表
+	省略：无服务
+  不省略: 数组：多个工程，对象一个工程
+
+	services单个服务：
+	name：服务名称(工程名称)
+	  不能省略，是接口的地址，在basedoc目录下作为工程的入口，只能是英文字母或下划线
+		多个工程之间不能重复，重复不添加，只添加第一个
+  path：该工程的请求路径，作为contextRoot存在
+	  不能省略,是接口的请求地址只能是英文字母或数字
+		多个工程之间不能重复，重复不添加，只添加第一个
+  protocal：请求协议（http或https）默认http
+  port：端口号默认80
+	timeout：请求超时时间，单位秒
+	
+	每个工程下都有一个interface.json
+	interface.json配置说明：
+	{
+		"interfaces" : [
+			{
+				"name" : "if_app",
+				"path" : "app",
+				"method" : "POST",
+				"public" : true
+			},
+			{
+				"name" : "sys/user",
+				"path" : "sys/user",
+				"method" : "GET,POST",
+				"public" : false
+			}
+		],
+		"interceptors" : [
+			{
+				"mapping" : "/app",
+				"exclude-mapping" : "/app/main/**",
+				"target" :"/interceptor/mainInterceptor"
+			},
+			{
+				"mapping" : ["/app","/app2"],
+				"exclude-mapping" : ["/app/a","/app2/b"],
+				"target" :"/interceptor/mainInterceptor"
+			}
+		]
+	}
+
+	interfaces接口列表：
+		name:
