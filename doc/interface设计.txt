@@ -28,6 +28,7 @@ service.json配置说明：
     "services": [
       {
         "name": "msg",
+        "project": "msg",
 				"path": "/msg"
         "port": "3000",
         "protocal": "HTTP",
@@ -38,8 +39,8 @@ service.json配置说明：
 }
 
 name:服务名称(仅作展示)
-	省略：默认app_service
-	不省略：1-50个字符
+	省略：默认This is an application server
+	不省略：1-500个字符
 basedoc：接口文档的基本目录，从该目录下查找工程
 	省略：app.js同一个父目录
 	不省略：是一个绝对路径
@@ -55,8 +56,10 @@ services：服务列表
 
 	services单个服务：
 	name：服务名称(工程名称)
-	  不能省略，是接口的地址，在basedoc目录下作为工程的入口，只能是英文字母或下划线
+	  不能省略，只能是英文字母数字或下划线的标示符
 		多个工程之间不能重复，重复不添加，只添加第一个
+	project：接口的地址
+	  不能省略，是一个相对路径，在basedoc目录下作为工程的入口，在该目录下有一个interface.json
   path：该工程的请求路径，作为contextRoot存在
 	  不能省略,是接口的请求地址只能是英文字母或数字
 		多个工程之间不能重复，重复不添加，只添加第一个

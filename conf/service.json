@@ -1,25 +1,15 @@
 {
   "server": {
-    "name": "server name",
+    "name": "This is an application server",
     "cluster": 1,
-    "basedir": null,
-    "log": {
-      "level": 2,
-      "file": null
-    },
+    "basedoc": null,
+    "loglevel":2,
     "service": {
-      "name": "app",
+      "name": null,
+      "project": null,
+      "path": null,
       "port": "3000",
-      "protocal": "HTTP",
-      "certificate": {
-        "key": "",
-        "cert": ""
-      },
-      "secure": false,
-      "auth": {
-        "type": "ssl",
-        "ca": ""
-      },
+      "protocal": "http",
       "timeout": "60"
     }
   }

@@ -2,18 +2,12 @@
   "server": {
     "name": "message_service",
     "cluster": 1,
-    "log": {
-      "level": 2
-    },
+    "loglevel": 2,
     "services": [
       {
         "name": "msg",
-        "port": "3000",
-        "protocal": "HTTP",
-        "timeout": "60"
-      },
-      {
-        "name": "msg2",
+        "project": "msg",
+        "path": "/app",
         "port": "3000",
         "protocal": "HTTP",
         "timeout": "60"
