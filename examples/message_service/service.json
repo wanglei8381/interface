@@ -11,6 +11,14 @@
         "port": "3000",
         "protocal": "HTTP",
         "timeout": "60"
+      },
+      {
+        "name": "sso",
+        "project": "sso",
+        "path": "/sso",
+        "port": "9000",
+        "protocal": "HTTP",
+        "timeout": "60"
       }
     ]
   }
