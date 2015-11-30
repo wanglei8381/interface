@@ -99,4 +99,8 @@ services：服务列表
 	}
 
 	interfaces接口列表：
-		name:
+		name: 是一个相对路径（相对于interface.json）
+		指定接口的处理程序，如果是一个目录，则查找目录下的if.js并加载,如果是文件，则加载该文件
+		path：该接口的请求地址，不允许省略，省略接口无效
+		method: 允许请求的方式，多个请求用逗号（,）隔开，默认ALL
+		public：接口是否公开，默认true

@@ -1,14 +1,14 @@
 {
   "interfaces" : [
     {
-      "name" : "if_app",
-      "path" : "app",
+      "name" : "interfaces/app/app.js",
+      "path" : "/app",
       "method" : "POST",
       "public" : true
     },
     {
-      "name" : "sys/user",
-      "path" : "sys/user",
+      "name" : "interfaces/msg",
+      "path" : "/msg",
       "method" : "GET,POST",
       "public" : false
     }
