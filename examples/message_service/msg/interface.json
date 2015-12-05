@@ -3,7 +3,7 @@
     {
       "name" : "interfaces/app/app.js",
       "path" : "/app",
-      "method" : "POST",
+      "method" : "ALL",
       "public" : true
     },
     {

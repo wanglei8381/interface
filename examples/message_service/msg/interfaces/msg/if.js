@@ -1,3 +1,4 @@
-exports.Runner = function(){
-  console.log('IFIFIFIFIFIF');
+exports.Runner = function(req, res){
+  console.log('msg');
+  res.ok();
 };
