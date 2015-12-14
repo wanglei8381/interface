@@ -1,0 +1,16 @@
+{
+  "server": {
+    "name": "This is an application server",
+    "cluster": 1,
+    "basedoc": null,
+    "loglevel":2,
+    "service": {
+      "name": null,
+      "project": null,
+      "path": null,
+      "port": "3000",
+      "protocal": "http",
+      "timeout": "60"
+    }
+  }
+}
