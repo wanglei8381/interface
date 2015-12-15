@@ -1,0 +1,15 @@
+{
+  "name": "interface",
+  "version": "0.0.3",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wanglei8381/interface.git"
+  },
+  "dependencies": {
+    "path-to-regexp": "^1.2.1"
+  }
+}

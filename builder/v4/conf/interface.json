@@ -1,0 +1,11 @@
+{
+  "interface": {
+    "name": null,
+    "path": null,
+    "method": "ALL",
+    "public": true
+  },
+  "interceptor":{
+
+  }
+}
