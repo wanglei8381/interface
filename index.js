@@ -54,4 +54,4 @@ process.on('uncaughtException', function(err){
   logger.error("[master][ERROR]:", err.stack);
 });
 
-console.log("-----------------------------------------[Interface] VERSION 0.0.5---------------------------------------------");
+console.log("-----------------------------------------[Interface] VERSION 0.0.6---------------------------------------------");
