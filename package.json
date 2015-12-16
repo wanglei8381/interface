@@ -10,6 +10,9 @@
     "url": "git@github.com:wanglei8381/interface.git"
   },
   "dependencies": {
-    "path-to-regexp": "^1.2.1"
+    "path-to-regexp": "^1.2.1",
+    "send": "0.9.3",
+    "uid-safe": "1.0.1",
+    "cookie-signature": "1.0.5"
   }
 }

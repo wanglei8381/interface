@@ -17,6 +17,8 @@ exports.Runner = function(req, res){
     console.log('app','master');
   }
 
+  res.cookie('JSESSION','wanglei',{maxAge:10,path:'/app/',signed:true});
+
   res.ok();
 
 };
