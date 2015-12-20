@@ -5,7 +5,9 @@
     "method": "ALL",
     "public": true
   },
-  "interceptor":{
-
+  "filter":{
+    "mapping": null,
+    "exclude-mapping": null,
+    "target": null
   }
 }

@@ -84,16 +84,16 @@ services：服务列表
 				"public" : false
 			}
 		],
-		"interceptors" : [
+		"filters" : [
 			{
 				"mapping" : "/app",
 				"exclude-mapping" : "/app/main/**",
-				"target" :"/interceptor/mainInterceptor"
+				"target" :"/filter/mainFilter"
 			},
 			{
 				"mapping" : ["/app","/app2"],
 				"exclude-mapping" : ["/app/a","/app2/b"],
-				"target" :"/interceptor/mainInterceptor"
+				"target" :["/filter/mainFilter","/filter/mainFilter"]
 			}
 		]
 	}
@@ -104,3 +104,8 @@ services：服务列表
 		path：该接口的请求地址，不允许省略，省略接口无效
 		method: 允许请求的方式，多个请求用逗号（,）隔开，默认ALL
 		public：接口是否公开，默认true
+
+  filters过滤器：
+  	mapping映射的请求路径，可以是一个数组，同时映射多个
+  	exclude-mapping在mapping基础上排除的请求路径，可以同时排除多个
+  	target执行的过滤器，可以执行多个，按顺序执行，如果一个停止执行，后续的都不会执行

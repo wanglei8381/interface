@@ -13,16 +13,16 @@
       "public" : false
     }
   ],
-  "interceptors" : [
+  "filters" : [
     {
       "mapping" : "/app",
       "exclude-mapping" : "/app/main/**",
-      "target" :"/interceptor/mainInterceptor"
+      "target" :"/filter/mainFilter.js"
     },
     {
       "mapping" : ["/app","/app2"],
       "exclude-mapping" : ["/app/a","/app2/b"],
-      "target" :"/interceptor/mainInterceptor"
+      "target" :"/filter/mainFilter.js"
     }
   ]
 }
