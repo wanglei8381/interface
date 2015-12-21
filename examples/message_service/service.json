@@ -5,9 +5,9 @@
     "loglevel": 2,
     "services": [
       {
-        "name": "msg",
+        "name": "msg_service",
         "project": "msg",
-        "path": "/app",
+        "path": "/msg",
         "port": "3000",
         "protocal": "HTTP",
         "timeout": "60"

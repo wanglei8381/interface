@@ -20,9 +20,9 @@
       "target" :"/filter/mainFilter.js"
     },
     {
-      "mapping" : ["/app","/app2"],
-      "exclude-mapping" : ["/app/a","/app2/b"],
-      "target" :"/filter/mainFilter.js"
+      "mapping" : ["/app/**","/app2"],
+      "exclude-mapping" : ["/app/","/app2/b"],
+      "target" :"/filter"
     }
   ]
 }

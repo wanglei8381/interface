@@ -60,7 +60,7 @@ services：服务列表
 		多个工程之间不能重复，重复不添加，只添加第一个
 	project：接口的地址
 	  不能省略，是一个相对路径，在basedoc目录下作为工程的入口，在该目录下有一个interface.json
-  path：该工程的请求路径，作为contextRoot存在
+  path：该工程的请求路径，作为baseUrl存在
 	  不能省略,是接口的请求地址只能是英文字母或数字
 		多个工程之间不能重复，重复不添加，只添加第一个
   protocal：请求协议（http或https）默认http

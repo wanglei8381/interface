@@ -1,4 +1,4 @@
-var pathToRegExp = require('../lib/filter').pathToRegexp;
+var pathToRegExp = require('../lib/filter/pathToRegExp');
 var assert = require('assert');
 
 describe('path-to-regexp', function () {
@@ -11,6 +11,11 @@ describe('path-to-regexp', function () {
 
     it('尾部有斜线，请求没有斜线', function () {
       var m = pathToRegExp('/test/').exec('/test');
+      assert.equal(m, null);
+    });
+
+    it('尾部没有斜线，请求有斜线', function () {
+      var m = pathToRegExp('/test').exec('/test/');
       assert.equal(m, null);
     });
 
