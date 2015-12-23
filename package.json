@@ -1,5 +1,5 @@
 {
-  "name": "interface",
+  "name": "web-interface",
   "version": "0.0.8",
   "description": "node接口开发",
   "main": "index.js",
