@@ -20,6 +20,10 @@
         "protocal": "HTTP",
         "timeout": "60"
       }
-    ]
+    ],
+    "multipartResolver": {
+      "auto": true,
+      "path": "D:\\usr\\local\\files"
+    }
   }
 }

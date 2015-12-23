@@ -1,7 +1,15 @@
 {
   "name": "interface",
-  "version": "0.0.3",
+  "version": "0.0.8",
+  "description": "node接口开发",
+  "main": "index.js",
   "license": "MIT",
+  "author": "wanglei",
+  "keywords": [
+    "node",
+    "web",
+    "interface"
+  ],
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -9,8 +17,13 @@
     "type": "git",
     "url": "git@github.com:wanglei8381/interface.git"
   },
+  "bugs": {
+    "url": "https://github.com/wanglei8381/interface/issues"
+  },
   "dependencies": {
     "path-to-regexp": "^1.2.1",
+    "raw-body": "2.1.5",
+    "formidable": "1.0.17",
     "send": "0.9.3",
     "uid-safe": "1.0.1",
     "cookie-signature": "1.0.5"

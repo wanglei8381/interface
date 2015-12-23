@@ -1,7 +1,7 @@
 require('./lib/global');
 var cluster = require('cluster');
 var Server = require('./lib/server');
-var logger = require('./lib/logger')('[interface][index]');
+var logger = require('./lib/logger')('[Interface][index]');
 
 exports.Runner = function (path) {
   console.time('Server startup time');
@@ -54,4 +54,4 @@ process.on('uncaughtException', function(err){
   logger.error("[master][ERROR]:", err.stack);
 });
 
-console.log("-----------------------------------------[Interface] VERSION 0.0.7---------------------------------------------");
+console.log("-----------------------------------------[Interface] VERSION 0.0.8---------------------------------------------");

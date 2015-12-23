@@ -10,14 +10,11 @@ exports.Runner = function (req, res) {
   console.log('req.query       :', req.query);
   console.log('req.pathname    :', req.pathname);
   console.log('req.cookies     :', req.cookies);
-
-  if (cluster.isWorker) {
-    console.log('app', cluster.worker.id);
-  } else {
-    console.log('app', 'master');
-  }
-
-  console.log('#######session', req.session);
+  console.log('req.params      :', req.params);
+  console.log('req.session     :', req.session);
+  console.log('req.body        :', req.body);
+  console.log('req.files       :', req.files);
+  console.log('multipartResolver       :', req.context.parentContext.multipartResolver);
 
   req.session.user = {name: 'wanglei', r: Math.random()};
 

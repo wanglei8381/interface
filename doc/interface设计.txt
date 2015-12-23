@@ -34,7 +34,11 @@ service.json配置说明：
         "protocal": "HTTP",
         "timeout": "60"
       }
-    ]
+    ],
+	"multipartResolver": {
+		"auto": true,
+		"path": null
+	}
   }
 }
 
@@ -66,7 +70,11 @@ services：服务列表
   protocal：请求协议（http或https）默认http
   port：端口号默认80
 	timeout：请求超时时间，单位秒
-	
+
+	multipartResolver:文件上传配置
+	auto：是否是自动上传，默认false，否则，用户自己处理文件上传
+	path：文件上传的临时目录
+
 	每个工程下都有一个interface.json
 	interface.json配置说明：
 	{

@@ -2,7 +2,7 @@
   "interfaces" : [
     {
       "name" : "interfaces/app/app.js",
-      "path" : "/app",
+      "path" : "/app/:id",
       "method" : "ALL",
       "public" : true
     },
