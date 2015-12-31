@@ -24,6 +24,16 @@
     "multipartResolver": {
       "auto": true,
       "path": "D:\\usr\\local\\files"
+    },
+    "session": {
+      "maxAge": 20,
+      "secret": "DEF_INTERFACE_SECRET",
+      "local": false,
+      "host": "192.168.1.183",
+      "port": 6379,
+      "poolsize": 10,
+      "db": 2,
+      "authpass": null
     }
   }
 }

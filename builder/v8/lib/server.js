@@ -113,14 +113,12 @@ function parseConfig(context) {
   }
 
   context.multipartResolver = confs.multipartResolver;
-  context.session = confs.session;
 }
 
 Server.bindingService = function (context) {
   var services = context.confs.services;
   if (!Object.isEmpty(services)) {
     services.forEach(function (item, index) {
-      logger.debug('\n################### [bindingService][%s] ###################', item.name);
       var service = new Service(context, item);
       var serviceName = service.serviceName;
       if (!service.deploySuccess) {

@@ -16,7 +16,11 @@ exports.Runner = function (req, res) {
   console.log('req.files       :', req.files);
   console.log('multipartResolver       :', req.context.parentContext.multipartResolver);
 
-  req.session.user = {name: 'wanglei', r: Math.random()};
+  res.cookie('MAS', 'zw0001', {maxAge: 20});
+
+  req.session.user = {name: 'wanglei2', r: Math.random()};
+
+  console.log('#################OVER');
 
   res.ok();
 

@@ -32,13 +32,23 @@ service.json配置说明：
 				"path": "/msg"
         "port": "3000",
         "protocal": "HTTP",
-        "timeout": "60"
+        "timeout": 60
       }
     ],
-	"multipartResolver": {
-		"auto": true,
-		"path": null
-	}
+		"multipartResolver": {
+			"auto": true,
+			"path": null
+		},
+		"session": {
+			"maxAge": 20,
+			"secret": "DEF_INTERFACE_SECRET",
+			"local": true,
+			"host": "127.0.0.1",
+			"port": 6379,
+			"poolsize": 10,
+			"db": 2,
+			"authpass": null
+		}
   }
 }
 
@@ -71,9 +81,20 @@ services：服务列表
   port：端口号默认80
 	timeout：请求超时时间，单位秒
 
-	multipartResolver:文件上传配置
-	auto：是否是自动上传，默认false，否则，用户自己处理文件上传
+	## multipartResolver:文件上传配置
+	auto：是否是自动上传，默认true，否则，用户自己处理文件上传
 	path：文件上传的临时目录
+
+  ## session配置
+	maxAge：session存活时间（单位分钟，默认20分钟）
+  secret：cookie签名信息（默认DEF_INTERFACE_SECRET）
+	local：本地存储，还是redis存储，默认本地，如果是启动多进程，请选择redis存储
+	如果redis存储
+	host：redis ip地址（默认127.0.0.1）
+	port：redis端口号（默认6379）
+	db：选择redis数据库（默认2）
+	authpass：redis连接密码（默认null）
+	poolsize：连接池最大数（默认10）
 
 	每个工程下都有一个interface.json
 	interface.json配置说明：

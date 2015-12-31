@@ -5,7 +5,7 @@ var cluster = require('cluster');
 function buildServer(context) {
 
   function onRequest(request, response) {
-    if (request.url == "/favicon.ico") {
+    if (request.url == "/favicon.ico"){
       response.end();
       return false;
     }
@@ -25,9 +25,7 @@ function buildServer(context) {
           logger.error('[buildServer]onRequest', e.stack);
           response.end(JSON.stringify({status: -1, msg: "error"}));
         }
-      }).listen(context.port, function () {
-        logger.debug('[buildServer][' + context.serviceName + ']Server has started http://127.0.0.1:' + context.port);
-      });
+      }).listen(context.port);
     }
 
   } catch (e) {

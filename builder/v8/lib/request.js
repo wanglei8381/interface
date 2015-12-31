@@ -79,45 +79,31 @@ req.handleReqURL = function () {
   this.secret = this.secret || Session.secret;
 };
 
-req.handleCookie = function (next) {
+req.handleCookie = function () {
   this.cookies = {};
   if (this.headers.cookie) {
     this.cookies = cookie.parse(this.headers.cookie, {secret: this.secret});
   }
-  next();
 };
 
-req.handleSession = function (next) {
+req.handleSession = function () {
 
-  var self = this;
+  //清除无效的session
+  Session.clear();
+
   var session = {};
-  var done = function () {
-    self.res.cookie(Session.key, session.id, {maxAge: session.maxAge, signed: true});
-    self.session = session.cache;
-    next();
-  };
-
   var sid = this.cookies[Session.key];
   if (sid) {
-    Session.get(sid, function (err, sess) {
-      if (err) return next(err);
-      session = sess;
-      if (session != null) {
-        //本地存储
-        if (Session.pool.local) {
-          session.update();
-        } else {
-          session.cache.__proto__ = session;
-        }
-      } else {
-        session = new Session();
-      }
-      done();
-    });
-
+    session = Session.get(sid);
+    if (session != null) {
+      session.update();
+    } else {
+      session = new Session();
+    }
   } else {
     session = new Session();
-    done();
   }
+  this.res.cookie(Session.key, session.id, {maxAge: session.maxAge, signed: true});
+  req.session = session.cache;
 
 };

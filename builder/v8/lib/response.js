@@ -14,16 +14,6 @@ var res = module.exports = {
   __proto__: http.ServerResponse.prototype
 };
 
-res.endFunction = res.end;
-
-res.end = function (data, encoding, callback) {
-  //设置，更新session
-  if(this.req.session){
-    Session.set(this.req.session.__proto__);
-  }
-  this.endFunction(data, encoding, callback);
-};
-
 res.json = function (obj) {
   this.statusCode = 200;
   this.setHeader("Content-Type", "application/json;charset=utf-8");
@@ -101,8 +91,8 @@ res.cookie = function (name, val, options) {
   if ('object' == typeof val) val = JSON.stringify(val);
   if (signed && secret != null) val = 's:' + sign(val, secret);
   if ('maxAge' in options) {
-    options.maxAge = options.maxAge * 60;
-    options.expires = new Date(Date.now() + options.maxAge * 1000);
+    options.maxAge = options.maxAge * 1000 * 60;
+    options.expires = new Date(Date.now() + options.maxAge);
   }
   if (null == options.path) options.path = '/';
   var headerVal = cookie.serialize(name, String(val), options);

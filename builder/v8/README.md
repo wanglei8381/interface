@@ -5,4 +5,4 @@ Web framework integration interface
 npm install web-interface
 
 ## 提示
-项目还在开发中，还不够成熟，文档正在维护中
+项目还在开发中，还不够成熟

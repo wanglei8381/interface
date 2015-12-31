@@ -15,16 +15,6 @@
     "multipartResolver": {
       "auto": true,
       "path": null
-    },
-    "session": {
-      "maxAge": 20,
-      "secret": "DEF_INTERFACE_SECRET",
-      "local": true,
-      "host": "127.0.0.1",
-      "port": 6379,
-      "poolsize": 10,
-      "db": 2,
-      "authpass": null
     }
   }
 }

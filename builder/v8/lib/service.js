@@ -8,7 +8,6 @@ var logger = require('./logger')('[Interface][service]');
 var request = require('./request');
 var response = require('./response');
 var form = require('./form');
-var sessionPool = require('./pool/session_pool');
 
 var identifierReg = /^[a-zA-Z_]+[a-zA-Z_1-9]*$/;
 
@@ -50,8 +49,6 @@ var service = module.exports = function (manager, confs) {
   } catch (e) {
     logger.error('[constructor]', 'binding interface', e.stack);
   }
-
-  sessionPool.setConfig(manager.session);
 };
 
 service.prototype.handle = function (req, res) {
@@ -231,7 +228,6 @@ function bindingInterface(context) {
 
   context.confs.i_fs.forEach(function (confs) {
     router.handleConfig(context, confs);
-    logger.debug('[bindingInterface]' + confs.name);
   });
 }
 
@@ -242,16 +238,17 @@ function bindingFilter(context) {
 
   //处理系统过滤器
   filter.use(context.path + '/**', function (req, res, next) {
-    req.handleCookie(next);
+    req.handleCookie();
+    next();
   }, function (req, res, next) {
-    req.handleSession(next);
+    req.handleSession();
+    next();
   }, form.json(), form.urlencoded(), form.multipart());
 
   //处理用户自定义过滤器
   if (!Object.isEmpty(context.confs.filters)) {
     context.confs.filters.forEach(function (confs) {
       filter.handleConfig(context, confs);
-      logger.debug('[bindingFilter]' + confs.target);
     });
   }
 
