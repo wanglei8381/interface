@@ -40,8 +40,8 @@ function start(manager) {
       for (var i = 1; i <= manager.cluster; i++) {
         cluster.fork();
       }
-      cluster.on('exit',function(worker,code,singal){
-        logger.warn('[start] worker'+worker.id+' WORKER DIED');
+      cluster.on('exit', function (worker, code, singal) {
+        logger.warn('[start] worker' + worker.id + ' WORKER DIED');
         cluster.fork();
       });
 

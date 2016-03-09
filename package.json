@@ -1,6 +1,6 @@
 {
   "name": "web-interface",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "node接口开发",
   "main": "index.js",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "send": "0.9.3",
     "uid-safe": "1.0.1",
     "cookie-signature": "1.0.5",
-    "redis" : "2.4.2",
-    "generic-pool" : "2.2.2"
+    "redis": "2.4.2",
+    "generic-pool": "2.2.2"
   }
 }

@@ -18,14 +18,14 @@ res.json = function (obj) {
 }
 
 res.fail = function (obj) {
-  if(obj == null) {
+  if (obj == null) {
     obj = 'fail';
   }
   this.json({status: -1, msg: obj});
 }
 
 res.ok = function (obj) {
-  if(obj == null) {
+  if (obj == null) {
     obj = 'ok';
   }
   this.json({status: 1, msg: obj});

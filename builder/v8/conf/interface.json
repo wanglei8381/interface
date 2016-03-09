@@ -5,7 +5,7 @@
     "method": "ALL",
     "public": true
   },
-  "filter":{
+  "filter": {
     "mapping": null,
     "exclude-mapping": null,
     "target": null

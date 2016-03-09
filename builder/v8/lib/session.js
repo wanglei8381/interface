@@ -67,7 +67,7 @@ Session.remove = function (sid) {
 //清除无效的session
 Session.clear = function () {
   //每隔一个小时清空一下数据
-  if(Date.now() - lastTime < 1000 * 60 * 60) {
+  if (Date.now() - lastTime < 1000 * 60 * 60) {
     return;
   }
   lastTime = Date.now();

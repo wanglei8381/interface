@@ -5,7 +5,6 @@
     "method": "ALL",
     "public": true
   },
-  "interceptor":{
-
+  "interceptor": {
   }
 }

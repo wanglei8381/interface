@@ -50,7 +50,7 @@ exports.Runner = function (path) {
   console.timeEnd('Server startup time');
 };
 
-process.on('uncaughtException', function(err){
+process.on('uncaughtException', function (err) {
   logger.error("[master][ERROR]:", err.stack);
 });
 

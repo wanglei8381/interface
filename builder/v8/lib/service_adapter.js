@@ -5,7 +5,7 @@ var cluster = require('cluster');
 function buildServer(context) {
 
   function onRequest(request, response) {
-    if (request.url == "/favicon.ico"){
+    if (request.url == "/favicon.ico") {
       response.end();
       return false;
     }
