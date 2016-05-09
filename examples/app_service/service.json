@@ -1,0 +1,15 @@
+{
+  "server": {
+    "name": "app_service",
+    "services": {
+      "name": "app",
+      "project": "app",
+      "path": "/app",
+      "port": "3000"
+    },
+    "multipartResolver": {
+      "auto": true,
+      "path": "D:\\usr\\local\\files"
+    }
+  }
+}
