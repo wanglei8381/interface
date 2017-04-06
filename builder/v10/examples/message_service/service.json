@@ -1,0 +1,39 @@
+{
+  "server": {
+    "name": "message_service",
+    "cluster": 1,
+    "loglevel": 2,
+    "services": [
+      {
+        "name": "msg_service",
+        "project": "msg",
+        "path": "/msg",
+        "port": "3000",
+        "protocal": "HTTP",
+        "timeout": "60"
+      },
+      {
+        "name": "sso",
+        "project": "sso",
+        "path": "/sso",
+        "port": "9000",
+        "protocal": "HTTP",
+        "timeout": "60"
+      }
+    ],
+    "multipartResolver": {
+      "auto": true,
+      "path": "D:\\usr\\local\\files"
+    },
+    "session": {
+      "maxAge": 20,
+      "secret": "DEF_INTERFACE_SECRET",
+      "local": false,
+      "host": "192.168.1.183",
+      "port": 6379,
+      "poolsize": 10,
+      "db": 2,
+      "authpass": null
+    }
+  }
+}

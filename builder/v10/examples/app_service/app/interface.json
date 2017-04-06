@@ -1,0 +1,21 @@
+{
+  "interfaces": [
+    {
+      "name": "ifs/app.js",
+      "path": "/app/:id",
+      "method": "ALL"
+    },
+    {
+      "name": "ifs/if.js",
+      "path": "/app/main",
+      "method": "GET,POST"
+    }
+  ],
+  "filters": [
+    {
+      "mapping": "/app",
+      "exclude-mapping": "/app/main/**",
+      "target": "/filters/main.js"
+    }
+  ]
+}

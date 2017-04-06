@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<p>HELLOE WORLD</p>
+
+<form action="app/wl" method="post">
+  <input type="text" name="name"/>
+  <input type="text" name="pwd"/>
+  <button type="button" id="submit">SUBMIT</button>
+</form>
+
+<form action="app/wl" method="post" enctype="multipart/form-data">
+  <input type="text" name="name"/>
+  <input type="text" name="pwd"/>
+  <input type="file" name="file"/>
+  <button>UPLOAD</button>
+</form>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $('#submit').click(function () {
+    alert('提交数据');
+    var data = {name:'wanglei',pwd:'111'};
+    $.ajax({
+      url:'app/wl',
+      data:JSON.stringify(data),
+      type:'post',
+      contentType:'application/json',
+      success:function(data){
+        alert(data.status);
+      },
+      error:function(err){
+        alert(err.message);
+      }
+    });
+  });
+</script>
+</body>
+</html>

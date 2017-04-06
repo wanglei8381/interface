@@ -1,0 +1,34 @@
+{
+  "interfaces": [
+    {
+      "name": "interfaces/app/app.js",
+      "path": "/app",
+      "method": "POST",
+      "public": true
+    },
+    {
+      "name": "interfaces/msg",
+      "path": "/msg",
+      "method": "GET,POST",
+      "public": false
+    }
+  ],
+  "interceptors": [
+    {
+      "mapping": "/app",
+      "exclude-mapping": "/app/main/**",
+      "target": "/interceptor/mainInterceptor"
+    },
+    {
+      "mapping": [
+        "/app",
+        "/app2"
+      ],
+      "exclude-mapping": [
+        "/app/a",
+        "/app2/b"
+      ],
+      "target": "/interceptor/mainInterceptor"
+    }
+  ]
+}

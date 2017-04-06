@@ -1,0 +1,13 @@
+{
+  "interface": {
+    "name": null,
+    "path": null,
+    "method": "ALL",
+    "public": true
+  },
+  "filter": {
+    "mapping": null,
+    "exclude-mapping": null,
+    "target": null
+  }
+}

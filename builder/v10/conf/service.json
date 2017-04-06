@@ -1,0 +1,30 @@
+{
+  "server": {
+    "name": "This is an application server",
+    "cluster": 1,
+    "basedoc": null,
+    "loglevel": 2,
+    "service": {
+      "name": null,
+      "project": null,
+      "path": null,
+      "port": "3000",
+      "protocal": "http",
+      "timeout": "60"
+    },
+    "multipartResolver": {
+      "auto": true,
+      "path": null
+    },
+    "session": {
+      "maxAge": 20,
+      "secret": "DEF_INTERFACE_SECRET",
+      "local": true,
+      "host": "127.0.0.1",
+      "port": 6379,
+      "poolsize": 10,
+      "db": 2,
+      "authpass": null
+    }
+  }
+}

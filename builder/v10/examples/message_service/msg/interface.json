@@ -1,0 +1,34 @@
+{
+  "interfaces": [
+    {
+      "name": "interfaces/app/app.js",
+      "path": "/app/:id",
+      "method": "ALL",
+      "public": true
+    },
+    {
+      "name": "interfaces/msg",
+      "path": "/msg",
+      "method": "GET,POST",
+      "public": false
+    }
+  ],
+  "filters": [
+    {
+      "mapping": "/app",
+      "exclude-mapping": "/app/main/**",
+      "target": "/filter/mainFilter.js"
+    },
+    {
+      "mapping": [
+        "/app/**",
+        "/app2"
+      ],
+      "exclude-mapping": [
+        "/app/",
+        "/app2/b"
+      ],
+      "target": "/filter"
+    }
+  ]
+}
