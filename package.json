@@ -20,14 +20,45 @@
   "bugs": {
     "url": "https://github.com/wanglei8381/interface/issues"
   },
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "jest test",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "format": "prettier-eslint --no-semi --write \"lib/**/*.js\" \"test/**/*.js\"",
+    "precommit": "npm run lint"
+  },
   "dependencies": {
-    "path-to-regexp": "^1.2.1",
-    "raw-body": "2.1.5",
-    "formidable": "1.0.17",
-    "send": "0.9.3",
-    "uid-safe": "1.0.1",
-    "cookie-signature": "1.0.5",
-    "redis": "2.4.2",
-    "generic-pool": "2.2.2"
+    "path-to-regexp": "^2.2.0",
+    "raw-body": "^2.3.2",
+    "formidable": "^1.2.0",
+    "send": "^0.16.2",
+    "uid-safe": "^2.1.5",
+    "cookie-signature": "^1.1.0",
+    "redis": "^2.8.0",
+    "generic-pool": "^3.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "husky": "^0.14.3",
+    "jest": "^22.0.5",
+    "prettier": "1.10.2",
+    "prettier-eslint-cli": "^4.7.0"
+  },
+  "jest": {
+    "collectCoverage": false,
+    "moduleNameMapper": {
+      "^@$": "<rootDir>/src",
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "collectCoverageFrom": [
+      "lib/**"
+    ],
+    "setupFiles": [
+      "<rootDir>/test/unit/setup"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/unit/index",
+    "coverageDirectory": "test/coverage"
   }
 }
